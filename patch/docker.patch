@@ -1,0 +1,7 @@
+- 查看容器对应的ip:
+
+`docker ps -q | xargs -n 1 docker inspect --format '{{ .Name }} {{range .NetworkSettings.Networks}} {{.IPAddress}}{{end}}' | sed 's#^/##';`
+
+- 清理没有`tag`的镜像
+
+`docker images | grep none | awk '{print $3}' | xargs -L1 docker rmi`
