@@ -1,0 +1,8 @@
+- 提取字符串, 且不要引号包裹
+
+`echo '{"a": "hello world"}' | jq -r ".a"`
+`echo '{"a": "hello world"}' | jq --raw-output ".a"`
+
+- 多filer, 用逗号隔开
+
+`echo '{"a": "hello", "b":"world"}' | jq ".a, .b"`
