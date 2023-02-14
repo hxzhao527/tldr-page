@@ -1,0 +1,3 @@
+- 使用多个参数; 其中的`-L`表示一条命令最多吃多少参数
+
+`echo 'hello' 'world' | xargs -L 2 bash -c 'echo first:$0 second:$1'`
