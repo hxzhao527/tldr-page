@@ -1,0 +1,7 @@
+- 编译得到asm
+
+`go tool compile -N -l -S main.go`
+
+- 构建得到asm
+
+`go build -gcflags="all=-N -l" -o tmp.o main.go; go tool objdump tmp.o`
